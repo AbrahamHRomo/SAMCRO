@@ -2,10 +2,11 @@
 
 int main()
 {
-  char caracter = '?'; //se puede modificar el valor de la variable char para comprobar los if anidados.
-  int valor_ascii ;
+  int valor_ascii = 10500;
+  char caracter;
 
-       valor_ascii = (int) caracter;
+
+      caracter = (char) valor_ascii;
 
              if(valor_ascii >= 48 && valor_ascii <= 57)
              {printf("El valor ASCII del caracter numerico '%c' es '%d'\n", caracter, valor_ascii );
