@@ -2,7 +2,7 @@
 
  #include <string.h>
 
-struct Alumno{​​​​
+struct Alumno{
 
      int matricula;
 
@@ -10,11 +10,11 @@ struct Alumno{​​​​
 
      int semestre;
 
- }​​​​;
+ };
 
 
 
- int main(){​​​​
+ int main(){
 
    struct Alumno alumno_uno;
 
@@ -36,4 +36,4 @@ struct Alumno{​​​​
 
    printf("matricula: %d \nnombre: %s \nsemestre: %d \n", alumno_uno.matricula, alumno_uno.nombre, alumno_uno.semestre);
 
- }​​​​
+ }

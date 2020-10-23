@@ -9,12 +9,12 @@ int main(){
   puntero = &arreglo_char;
 
   printf("valor de mi puntero (referencia o direccion en memoria) \n");
-
+//haha haha haha
   printf("%d \n", puntero);
 
   printf("el valor de donde mi puntero esta apuntando \n");
 
-  printf("%c \n", *puntero);
+  printf("%c \n", *puntero );
 
   printf("valor de mi puntero (referencia o direccion en memoria) \n");
 
