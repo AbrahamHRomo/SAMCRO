@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<ctype.h>
 
+
 int main()
 {
   int arreglo_de_enteros[10], num_to_find;
