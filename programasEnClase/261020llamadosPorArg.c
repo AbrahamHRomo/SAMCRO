@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 void imprimir_cuadrado(char caracter, int largo, int alto){​​​​​​
@@ -23,4 +23,4 @@ int main(int numero_de_argumentos, char **valores){​​​​​​
         printf("Faltan argumentos");
     }​​​​​​
     return 0;
-}​​​​​​*/
+}​​​
