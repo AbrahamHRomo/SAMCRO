@@ -54,9 +54,12 @@ for (contador_1 = 0; contador_1 < 10; contador_1 ++)
             contador_3 = contador_2 + 1;
             for(contador_2 = 0; contador_2 < 9;  contador_2 ++){
                       for (contador_3 = contador_2 + 1; contador_3 < 10; contador_3 ++){
-                                auxiliar = matriz_ordenada[contador_2][contador_1];
-                                matriz_ordenada[contador_2][contador_1] = matriz_ordenada[contador_3][contador_1];
-                                matriz_ordenada[contador_3][contador_1] = auxiliar;
+                                if (matriz_ordenada[contador_2][contador_1] <= matriz_ordenada[contador_3][contador_1]){
+                                            auxiliar = matriz_ordenada[contador_2][contador_1];
+                                            matriz_ordenada[contador_2][contador_1] = matriz_ordenada[contador_3][contador_1];
+                                            matriz_ordenada[contador_3][contador_1] = auxiliar;
+                                }
+
                       }
             }
   }
