@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include <stdlib.h>
 
 void funcion_ImprimeCuadrado (int *, int *);
 
