@@ -2,7 +2,7 @@
 
 int main()
 {
-  int valor_ascii = 10500;
+  int valor_ascii = 64;
   char caracter;
 
 
