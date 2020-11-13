@@ -2,12 +2,9 @@
 #include<stdlib.h>
 
 int f_suma_serie(int *elementos_maximos){
-
-  int suma_serie = 0;
-      printf("La suma de los cuadrados del 1 a %d es:\n\n", *elementos_maximos);
-      for(int i = 1; i <= *elementos_maximos; i ++){
-              suma_serie = suma_serie + (i * i);
-      }
+  int suma_serie = 0, elem_max = *elementos_maximos;
+      printf("La suma de los cuadrados del 1 al %d es:\n\n", *elementos_maximos);
+      suma_serie =  (elem_max * (elem_max + 1) * (2 * elem_max + 1))/6;
     printf("SUMA: %d", suma_serie);
 }
 
