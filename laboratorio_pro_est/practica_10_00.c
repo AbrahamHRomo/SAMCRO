@@ -11,13 +11,11 @@ typedef struct{
         char puesto[30];
         char correo[50];
 } postulante;
-
-//prototipos de las funciones que se usaran en el programa.
+                //prototipos de las funciones que se usaran en el programa.
 void f_lectura(postulante *, int *);
 void f_imp_post(postulante *, int TAM);
 void f_imp_menu(void);
 
-//funcion main obvi
 int main (){
       postulante ARRE[50];
       int TAM;
@@ -25,7 +23,7 @@ int main (){
       int contador;
       do {
               fflush(stdin);
-              printf("\nIngrese numero de postulantes: ");
+              printf("\nIngrese numero maximo posible de postulantes: ");
               scanf("%d", &TAM);
       } while (TAM > 50 || TAM < 1);
 
@@ -44,7 +42,7 @@ int main (){
       } while (opcion != '3');
 return 0;
 }
-
+            //funciones
 void f_lectura(postulante A[], int *contador){
 
         printf("\nIngrese datos del postulante %d ", *contador + 1);
@@ -74,11 +72,11 @@ void f_imp_post(postulante A[], int TAM){
         printf("\nLista de postulantes.\n\n");
         for (i = 0; i < TAM; i ++){
                 printf("Postulante %d\n\n", i + 1);
-                printf("Nombre: %s  %s.\n",A[i].nombre, A[i].apellido);
-                printf("Edad: %d.\n", A[i].edad);
-                printf("Telefono: %s.\n", A[i].telefono);
-                printf("Correo electronico: %s.\n", A[i].correo);
-                printf("Puesto solicitante: %s.\n\n", A[i].puesto);
+                printf("Nombre: %s  %s\n",A[i].nombre, A[i].apellido);
+                printf("Edad: %d\n", A[i].edad);
+                printf("Telefono: %s\n", A[i].telefono);
+                printf("Correo electronico: %s\n", A[i].correo);
+                printf("Puesto solicitante: %s\n\n", A[i].puesto);
         }
 
 }
