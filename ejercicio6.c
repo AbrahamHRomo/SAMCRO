@@ -22,13 +22,13 @@ int main(){
 
    cuadrilatero2.altura = 12;
 
-   printf("Base del cuadrilatero1: %d \n", cuadrilatero1.base);
+   printf("Base del cuadrilatero 1: %d \n", cuadrilatero1.base);
 
-   printf("Altura del cuadrilatero1: %d \n", cuadrilatero1.altura);
+   printf("Altura del cuadrilatero 1: %d \n", cuadrilatero1.altura);
 
-   printf("Base del cuadrilatero2: %d \n", cuadrilatero2.base);
+   printf("Base del cuadrilatero 2: %d \n", cuadrilatero2.base);
 
-   printf("Altura del cuadrilatero2: %d \n", cuadrilatero2.altura);
+   printf("Altura del cuadrilatero 2: %d \n", cuadrilatero2.altura);
 
    char vertical = '|', horizontal = '-', esquina = '+';
      int alto_contador, contador_horizontal;
@@ -48,7 +48,7 @@ int main(){
         }
         printf("\n" );
      }
-     
+
       printf("\n\n");
 
      for (alto_contador = 0; alto_contador < cuadrilatero1.altura; alto_contador ++)
