@@ -27,7 +27,7 @@ int main(){
 
     struct empleado ARRAY[50];
     int TAM;
-    int opcion = 9; //hola
+    int opcion = 9;
     int contador;
     char nombre[70], nom_dep[50];
     do {

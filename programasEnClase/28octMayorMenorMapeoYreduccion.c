@@ -45,3 +45,17 @@ int main(){
     int sumatoria = reduccion(valores, cantidad, suma);
     printf("cantidad: %d \nminimo: %d \nmaximo: %d \nsumatoria: %d", cantidad, minimo, maximo, sumatoria);
 }
+
+/*
+sturct
+arreglo de enteros
+puntero a una funcion que reciba el arreglo y regresa la suma
+puntero a una funcion que reciba el arreglo y regresa la min
+puntero a una funcion que reciba el arreglo y regresa la max
+puntero a una funcion que reciba el arreglo y regresa la promedio
+
+main
+arreglo de esa struct con 3 element
+ declarar los 3 elementos y asignarles las funciones
+Ejecutar las operaciones e imprimier el resultado
+*/
