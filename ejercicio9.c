@@ -10,15 +10,18 @@ int fibonacci_funcion(int num){
   }
 }
 
-int main (){
-
+int main (int arg_cont, char **arg_V){ //solo colocan un contador entero dentro del main y una arreglo de cadenas
+                                       //que capturara las veces que queramos que se ejecute el programa
     int valor = 0;
+    int i = 0;
 
-    do{
-            printf("\nIngrese valor para calcular termino fibonacci: ");
-            scanf("%d", &valor);
-    }while (valor > 40 || valor < 1);
+    for (i = 1; i < arg_cont; i ++){  //nuerto contador no va a indicar cuantas veces se llamo el programa
+            valor = atoi(arg_V[i]);   //arg_V contiene en cadena de caracteres los valores con los que se mando llamar a la funcion
+                                      //atoi transforma las cadenas con caracteres numericos en enteros...
+            printf("\nTermino: %d\tValor del termino: %d", valor, fibonacci_funcion(valor));
+    }
+    printf("\n");
 
-    printf("\nTermino: %d\tValor del termino: %d", valor, fibonacci_funcion(valor));
+
   return 0;
 }
