@@ -38,7 +38,7 @@ int reduccion(int *valores, int cantidad_de_valores, int (*funcion_comparadora)(
 
 
 int main(){
-    int valores[] = {0,2,3,4};
+    int valores[] = {5,2,1,4};
     int cantidad = 4; //get_array_length(valores);
     int minimo = reduccion(valores, cantidad, menor);
     int maximo = reduccion(valores, cantidad, mayor);
