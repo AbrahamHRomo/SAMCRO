@@ -11,10 +11,10 @@ int fibonacci(int numero){
     }
 }
 int main(int numero_de_argumentos, char **valores){
-    int posicion_a_calcular = 10;
+    int posicion_a_calcular = 0;
     if(numero_de_argumentos > 0){
         posicion_a_calcular = atoi(valores[1]);
     }
-    printf("n: %d\n f: %d", posicion_a_calcular, fibonacci(posicion_a_calcular));
+    printf("n: %d\n f: %d\n", posicion_a_calcular, fibonacci(posicion_a_calcular));
     return 0;
 }
