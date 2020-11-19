@@ -52,7 +52,7 @@ srand(time(NULL));
                                     variable_2 = 1 + rand()% 100;
                                     result = f_suma (variable_1, variable_2);
                                     do {
-                                          printf("\nÂ¿Cuanto es: %d + %d = ?", variable_1, variable_2);
+                                          printf("\n¿Cuanto es: %d + %d = ?", variable_1, variable_2);
                                           printf("\nIngrese su respuesta: ");
                                           scanf("%d", &respuesta);
                                           f_result(respuesta, result);
@@ -62,7 +62,7 @@ srand(time(NULL));
                                     variable_2 = 1 + rand()% 100;
                                     result = f_dif (variable_1, variable_2);
                                     do {
-                                          printf("\nÂ¿Cuanto es: %d - %d = ?", variable_1, variable_2);
+                                          printf("\n¿Cuanto es: %d - %d = ?", variable_1, variable_2);
                                           printf("\nIngrese su respuesta: ");
                                           scanf("%d", &respuesta);
                                           f_result(respuesta, result);
@@ -72,7 +72,7 @@ srand(time(NULL));
                                     variable_2 = 1 + rand()% 100;
                                     result = f_prod (variable_1, variable_2);
                                     do {
-                                          printf("\nÂ¿Cuanto es: %d * %d = ?", variable_1, variable_2);
+                                          printf("\n¿Cuanto es: %d * %d = ?", variable_1, variable_2);
                                           printf("\nIngrese su respuesta: ");
                                           scanf("%d", &respuesta);
                                           f_result(respuesta, result);
@@ -82,7 +82,7 @@ srand(time(NULL));
                                     variable_2 = 1 + rand()% 100;
                                     result = f_div (variable_1, variable_2);
                                     do {
-                                          printf("\nÂ¿Cuanto es: %d / %d = ?", variable_1, variable_2);
+                                          printf("\n¿Cuanto es: %d / %d = ?", variable_1, variable_2);
                                           printf("\nIngrese su respuesta: ");
                                           scanf("%d", &respuesta);
                                           f_result(respuesta, result);
