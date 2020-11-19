@@ -15,7 +15,7 @@ int main (int arg_cont, char **arg_V){ //solo colocan un contador entero dentro 
     int valor = 0;
     int i = 0;
 
-    for (i = 1; i < arg_cont; i ++){  //nuerto contador no va a indicar cuantas veces se llamo el programa
+    for (i = 1; i < arg_cont; i ++){  //nuevo arg_cont nos va a indicar cuantas veces se llamo el programa
             valor = atoi(arg_V[i]);   //arg_V contiene en cadena de caracteres los valores con los que se mando llamar a la funcion
                                       //atoi transforma las cadenas con caracteres numericos en enteros...
             printf("\nTermino: %d\tValor del termino: %d", valor, fibonacci_funcion(valor));

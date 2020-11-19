@@ -12,6 +12,7 @@ int main(int num_de_arg, char **dimensiones_para_arreglos){
       int MA[val_max][val_max], MB[val_max][val_max], MR[val_max][val_max];
       int filas, columnas;
       int cont_1;
+      int i = 0;
 
       do{
               printf("\nIngrese el numero de filas de los arreglos: ");
