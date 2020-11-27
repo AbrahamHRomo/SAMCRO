@@ -3,19 +3,6 @@
 #include<stdlib.h>
 #include<ctype.h>
 
-typedef struct {
-
-                int no_cliente;
-                int no_auto;
-                int no_licencia;
-                char nombre_1[25];
-                char nombre_2[25];
-                char apellido_1[25];
-                char apellido_2[25];
-                char telefono[15];
-
-} datos_cliente;
-
 struct automovil{
 
             int no_auto;
@@ -27,21 +14,21 @@ struct automovil{
             int contador_alq;
             int valor_alq_x_dia;
             int valor_alquilado;
-            datos_cliente apunt_a_clientes;
+            struct cliente Info_automovil;
 }
 
-typedef struct {
+struct cliente{
 
-                int no_auto;
-                char licencia;
-                char placa[15];
-                char marca[30];
-                char modelo[30];
-                char color[30];
-                int contador_alq;
-                int valor_alq_x_dia;
-                int valor_alquilado;
-} datos_automovil;
+            int no_cliente;
+            int no_auto;
+            int no_licencia;
+            char nombre_1[25];
+            char nombre_2[25];
+            char apellido_1[25];
+            char apellido_2[25];
+            char telefono[15];
+            struct automovil Info_cliente;
+}
 
 void f_menu(void){
 
@@ -120,8 +107,8 @@ void f_lectura_cliente(){
 
 }
 int main (){
-              cliente ARRE_1[50];
-              automovil ARRE_2[50];
+              struct cliente ARRE_1[50];
+              struct automovil ARRE_2[50];
               int TAM_autos = 0, TAM_clientes;
               int *apuntador_1, *apuntador_2;
               int contador_autos = 0, contador_clientes = 0, num_auto = 0;
