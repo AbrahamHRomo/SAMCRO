@@ -6,7 +6,7 @@
 int main(){
    FILE *fp;
    char matricula_str[255], primer_parcial_str[255], segundo_parcial_str[255], pia_str[255], final_str[255];
-   fp = fopen("/tmp/evaluaciones.csv", "r+");
+   fp = fopen("/home/radical-ab/Escritorio/Archivos/evaluaciones.csv", "r+");
    int i =0;
 
 

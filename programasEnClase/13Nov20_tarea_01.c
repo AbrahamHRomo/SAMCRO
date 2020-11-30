@@ -15,7 +15,7 @@ struct Evaluacion{
 
 int main(){
    FILE *fp;
-   fp = fopen("/tmp/evaluaciones.csv", "w+");
+   fp = fopen("/home/radical-ab/Escritorio/Archivos/evaluaciones.csv", "w+");
    struct Evaluacion Evaluaciones[3];
    strcpy(Evaluaciones[0].Matricula, "11");
    Evaluaciones[0].PrimerParcial = 9;
@@ -44,3 +44,4 @@ int main(){
    }
    fclose(fp);
    printf("Archivo guardado");
+ return 0;}
