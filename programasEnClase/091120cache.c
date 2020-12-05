@@ -26,8 +26,8 @@ long factorial_cached(long  numero){​​​​​​​
 
 int main(int numero_de_argumentos, char **valores){​​​​​​​
     long posicion_a_calcular = 0;
-    cache[0]=1;
-    cache[1]=1;
+    cache[0] = 1;
+    cache[1] = 1;
     for(int i = 1; i < numero_de_argumentos; i++){​​​​​​​
         posicion_a_calcular = atol(valores[i]);
         printf("n: %d\tf: %ld\n", posicion_a_calcular, factorial(posicion_a_calcular));
