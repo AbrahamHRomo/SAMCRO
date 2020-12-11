@@ -109,10 +109,10 @@ int main(){
 
                         case '2': fp = fopen ("/home/radical-ab/Escritorio/Archivos/clientesBancoPractica13.csv", "r+");
                                   rewind(fp);
-                                  fscanf(fp, "%s %s %s\n", encabezados[0], encabezados[1], encabezados[2]);
+                                  fscanf(fp, "%s, %s, %s\n", encabezados[0], encabezados[1], encabezados[2]);
                                   j = 0;
 
-                                  fscanf(fp, "%s %s %s\n", arreglo_ceros[j].nombreENceros, arreglo_ceros[j].no_cuentaENceros, arreglo_ceros[j].saldoENceros);
+                                  fscanf(fp, "%s, %s, %s\n", arreglo_ceros[j].nombreENceros, arreglo_ceros[j].no_cuentaENceros, arreglo_ceros[j].saldoENceros);
                                   printf("\n%s %s %s", arreglo_ceros[j].nombreENceros, arreglo_ceros[j].no_cuentaENceros, arreglo_ceros[j].saldoENceros);
                                   cuenta = atoi (arreglo_ceros[j].no_cuentaENceros);
                                   if(cuenta != 0){
