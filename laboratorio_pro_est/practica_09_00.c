@@ -9,8 +9,9 @@ int main (){
       char nombresYapellidos[10][100], arreglo_cadenas[10][100], array[100], array_2[100];
       char nombres_ordenados[10][100];
       float auxiliar;
+      int i, j;
 
-      for (int i = 0; i < 10; i ++){
+      for (i = 0; i < 10; i ++){
             printf("\n\nIngrese nombre %d: ", i + 1);
             scanf("%s", &arreglo_nombres[i][0]);
             printf("\nIngrese apellido: ");
@@ -22,12 +23,12 @@ int main (){
             strcat(nombresYapellidos[i], arreglo_nombres[i]);
       }
 printf("\nLa lista de nombres es: \n\n");
-      for(int i = 0; i < 10; i ++){
+      for(i = 0; i < 10; i ++){
             printf("%d.- %s \n", i + 1, nombresYapellidos[i]);
       }
 
-      for (int i = 0; i < 9; i ++){
-            for (int j = i + 1; j < 10; j ++){
+      for (i = 0; i < 9; i ++){
+            for (j = i + 1; j < 10; j ++){
                   auxiliar = strcmp (nombres_ordenados[i], nombres_ordenados[j]);
                   if (auxiliar > 0){
                           strcpy (array, nombres_ordenados[i]);
@@ -41,7 +42,7 @@ printf("\nLa lista de nombres es: \n\n");
       }
 
       printf("\nLa lista ordenada de cadenas es: \n\n");
-            for(int i = 0; i < 10;  i ++){
+            for(i = 0; i < 10;  i ++){
                   printf("%d.- %s \n", i + 1, nombresYapellidos[i]);
             }
 
