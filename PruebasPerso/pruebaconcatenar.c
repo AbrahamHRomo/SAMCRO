@@ -6,7 +6,7 @@ int main(){
   char string[100];
   char string_2[100];
 scanf("%s", string);
-  strncpy(string_2, string + 4, 1);
+  strncpy(string_2, string + 4, 4);
   printf("CADENA : %s", string_2);
   return 0;
 }

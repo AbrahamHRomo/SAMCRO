@@ -244,6 +244,7 @@ int main (){
         punteroPIA = fopen("/home/radical-ab/Escritorio/Archivos/PIA_solicitado.csv", "w+");
         fprintf(punteroPIA, "MATRICULA, PARCIAL 1, PARCIAL 2, PARCIAL 3, PARCIAL 4, PARCIAL 5, PARCIAL 6, PARCIAL 7, PROMEDIO X ALUMNO, NO APROBADOS\n");
         for (i = 0; i < num_renglones; i ++){
+            fflush(stdin);
                 fprintf(punteroPIA, "%s, %d, %d, %d, %d, %d, %d, %d, %.0f, %d\n",ARREGLO[i].Matricula, atoi(ARREGLO[i].parcial1), atoi(ARREGLO[i].parcial2), atoi(ARREGLO[i].parcial3), atoi(ARREGLO[i].parcial4), atoi(ARREGLO[i].parcial5), atoi(ARREGLO[i].parcial6), atoi(ARREGLO[i].parcial7), f_promedio(ARREGLO, &i), f_reprobados_x_alumno(ARREGLO, &i));
         }
         fprintf(punteroPIA, "PROMEDIO X PARCIAL, %.0f, %.0f, %.0f, %.0f, %.0f, %.0f, %.0f, PROMEDIO DEL GRUPO, %.0f\n", arre_prom[1], arre_prom[2], arre_prom[3], arre_prom[4], arre_prom[5], arre_prom[6], arre_prom[7], promedioDelgrupo);
