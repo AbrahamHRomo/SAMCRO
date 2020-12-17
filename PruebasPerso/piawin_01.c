@@ -15,87 +15,93 @@ typedef struct {
         char parcial6[10];
         char parcial7[10];
 } alumno;
-alumno ARREGLO[50];
-typedef struct {
-        char mat_enCache[4];
-        int cal_enCache[7];
-        float prom_x_alumno[29];
-        float prom_x_parcial[7];
-        int cont_NoAprobXalumno[29];
-        int cont_NoAprobXparcial[7];
-} memoria;
-memoria arregloDEmemoria[50];
-float f_promedio(memoria A[], int *i){
+
+float f_promedio(alumno A[], int *i){
+          int valores[7] = {0, 0, 0, 0, 0, 0, 0};
           float promedio;
-          A[*i].prom_x_alumno[*i] = (float) (arregloDEmemoria[*i].cal_enCache[0] + arregloDEmemoria[*i].cal_enCache[1] + arregloDEmemoria[*i].cal_enCache[2] + arregloDEmemoria[*i].cal_enCache[3] + arregloDEmemoria[*i].cal_enCache[4] + arregloDEmemoria[*i].cal_enCache[5] +  arregloDEmemoria[*i].cal_enCache[6]) / 7;
-          promedio = A[*i].prom_x_alumno[*i];
+          valores[0] = atoi(A[*i].parcial1);
+          valores[1] = atoi(A[*i].parcial2);
+          valores[2] = atoi(A[*i].parcial3);
+          valores[3] = atoi(A[*i].parcial4);
+          valores[4] = atoi(A[*i].parcial5);
+          valores[5] = atoi(A[*i].parcial6);
+          valores[6] = atoi(A[*i].parcial7);
+          promedio = (float) (valores[0] + valores[1] + valores[2] + valores[3] + valores[4] + valores[5] + valores[6]) / 7;
           return promedio;
 }
-float f_prom_x_parcial(memoria A[], int *prom_parc, int *num_renglones){
+
+float f_prom_x_parcial(alumno A[], int *prom_parc, int *num_renglones){
           int valores = 0, j;
           float promedio = 0;
           int prom = *prom_parc;
            for (j = 0; j < *num_renglones; j ++){
                   switch(prom){
-                          case 1: valores += A[j].cal_enCache[0]; break;
-                          case 2: valores += A[j].cal_enCache[1]; break;
-                          case 3: valores += A[j].cal_enCache[2]; break;
-                          case 4: valores += A[j].cal_enCache[3]; break;
-                          case 5: valores += A[j].cal_enCache[4]; break;
-                          case 6: valores += A[j].cal_enCache[5]; break;
-                          case 7: valores += A[j].cal_enCache[6]; break;
+                          case 1: valores += atoi(A[j].parcial1); break;
+                          case 2: valores += atoi(A[j].parcial2); break;
+                          case 3: valores += atoi(A[j].parcial3); break;
+                          case 4: valores += atoi(A[j].parcial4); break;
+                          case 5: valores += atoi(A[j].parcial5); break;
+                          case 6: valores += atoi(A[j].parcial6); break;
+                          case 7: valores += atoi(A[j].parcial7); break;
                   }
            }
-           A[prom].prom_x_parcial[prom] = (float) valores / 29;
-           promedio = A[prom].prom_x_parcial[prom];
+           promedio = (float) valores / 29;
            return promedio;
 }
 
-int f_reprobados_x_alumno(memoria A[], int *i){
+int f_reprobados_x_alumno(alumno A[], int *i){
         int contador = 0;
-        if (A[*i].cal_enCache[0] < 7){
+        if (atoi(A[*i].parcial1) < 7){
                 contador += 1;
         }
-        if (A[*i].cal_enCache[1] < 7){
+        if (atoi(A[*i].parcial2) < 7){
                 contador += 1;
         }
-        if (A[*i].cal_enCache[2] < 7){
+        if (atoi(A[*i].parcial3) < 7){
                 contador += 1;
         }
-        if (A[*i].cal_enCache[3] < 7){
+        if (atoi(A[*i].parcial4) < 7){
                 contador += 1;
         }
-        if (A[*i].cal_enCache[4] < 7){
+        if (atoi(A[*i].parcial5) < 7){
                 contador += 1;
         }
-        if (A[*i].cal_enCache[5] < 7){
+        if (atoi(A[*i].parcial6) < 7){
                 contador += 1;
         }
-        if (A[*i].cal_enCache[6] < 7){
+        if (atoi(A[*i].parcial7) < 7){
                 contador += 1;
         }
         return contador;
 }
-int f_reprobados_x_parcial(memoria A[], int indice_i, int *num_renglones){
+
+int f_reprobados_x_parcial(alumno A[], int indice_i, int *num_renglones){
         int contador = 0;
         int opcion = indice_i;
         int j;
         for (j = 0; j < *num_renglones; j ++){
                 switch(opcion){
-                          case 1: if(A[j].cal_enCache[0] < 7)
-                                  contador += 1; break;
-                          case 2: if(A[j].cal_enCache[1] < 7)
-                                  contador += 1; break;
-                          case 3: if(A[j].cal_enCache[2] < 7)
-                                  contador += 1; break;
-                          case 4: if(A[j].cal_enCache[3] < 7)
-                                  contador += 1; break;
-                          case 5: if(A[j].cal_enCache[4] < 7)
-                                  contador += 1; break;
-                          case 6: if(A[j].cal_enCache[5] < 6)
-                                  contador += 1; break;
-                          case 7: if(A[j].cal_enCache[6] < 7)
-                                  contador += 1; break;
+                          case 1: if(atoi(A[j].parcial1) < 7){
+                                  contador += 1;
+                          } break;
+                          case 2: if(atoi(A[j].parcial2) < 7){
+                                  contador += 1;
+                          } break;
+                          case 3: if(atoi(A[j].parcial3) < 7){
+                                  contador += 1;
+                          } break;
+                          case 4: if(atoi(A[j].parcial4) < 7){
+                                  contador += 1;
+                          } break;
+                          case 5: if(atoi(A[j].parcial5) < 7){
+                                  contador += 1;
+                          } break;
+                          case 6: if(atoi(A[j].parcial1) < 6){
+                                  contador += 1;
+                          } break;
+                          case 7: if(atoi(A[j].parcial7) < 7){
+                                  contador += 1;
+                          } break;
                 }
         }
         return contador;
@@ -104,6 +110,7 @@ int f_reprobados_x_parcial(memoria A[], int indice_i, int *num_renglones){
 int main (){
         FILE *punteroDEarchivo;
         FILE *punteroPIA;
+        alumno ARREGLO[50];
         char  Encabezados[100];
         char coma[2];
         int i = 0, num_renglones = 29, prueba = 0;
@@ -116,8 +123,6 @@ int main (){
         do {
                 fscanf(punteroDEarchivo, "%s\n", ARREGLO[i].Informacion);
                 strncpy(ARREGLO[i].Matricula, ARREGLO[i].Informacion + 3, 4);
-                strcpy(arregloDEmemoria[i].mat_enCache, ARREGLO[i].Matricula);
-                printf("\nLa matricula capturada de la linea %d es: %s", i + 1, arregloDEmemoria[i].mat_enCache);
                 indice = 7;
                 strncpy(coma, ARREGLO[i].Informacion + indice, 1);
                 if (coma[0] == 44){
@@ -131,8 +136,8 @@ int main (){
                                 strncat(ARREGLO[i].parcial1, ARREGLO[i].Informacion + indice, 1);
                                 indice += 1;
                                 printf("\nSe registro calificacion 1 de alumno %d: %s", i + 1, ARREGLO[i].parcial1);
-                        }fflush(stdin);
-                } arregloDEmemoria[i].cal_enCache[0] = atoi(ARREGLO[i].parcial1);
+                        }
+                }
                 strncpy(coma, ARREGLO[i].Informacion + indice, 1);
                 if (coma[0] == 44){
                         indice += 1;
@@ -146,7 +151,7 @@ int main (){
                                 indice += 1;
                                 printf("\nSe registro calificacion 2 de alumno %d: %s", i + 1, ARREGLO[i].parcial2);
                         }
-                }arregloDEmemoria[i].cal_enCache[1] = atoi(ARREGLO[i].parcial2);
+                }
                 strncpy(coma, ARREGLO[i].Informacion + indice, 1);
                 if (coma[0] == 44){
                         indice += 1;
@@ -160,7 +165,7 @@ int main (){
                                 indice += 1;
                                 printf("\nSe registro calificacion 3 de alumno %d: %s", i + 1, ARREGLO[i].parcial3);
                         }
-                }arregloDEmemoria[i].cal_enCache[2] = atoi(ARREGLO[i].parcial3);
+                }
                 strncpy(coma, ARREGLO[i].Informacion + indice, 1);
                 if (coma[0] == 44){
                         indice += 1;
@@ -174,7 +179,7 @@ int main (){
                                 indice += 1;
                                 printf("\nSe registro calificacion 4 de alumno %d: %s", i + 1, ARREGLO[i].parcial4);
                         }
-                }arregloDEmemoria[i].cal_enCache[3] = atoi(ARREGLO[i].parcial4);
+                }
                 strncpy(coma, ARREGLO[i].Informacion + indice, 1);
                 if (coma[0] == 44){
                         indice += 1;
@@ -188,7 +193,7 @@ int main (){
                                 indice += 1;
                                 printf("\nSe registro calificacion 5 de alumno %d: %s", i + 1, ARREGLO[i].parcial5);
                         }
-                }arregloDEmemoria[i].cal_enCache[4] = atoi(ARREGLO[i].parcial5);
+                }
                 strncpy(coma, ARREGLO[i].Informacion + indice, 1);
                 if (coma[0] == 44){
                         indice += 1;
@@ -202,7 +207,7 @@ int main (){
                                 indice += 1;
                                 printf("\nSe registro calificacion 6 de alumno %d: %s", i + 1, ARREGLO[i].parcial6);
                         }
-                }arregloDEmemoria[i].cal_enCache[5] = atoi(ARREGLO[i].parcial6);
+                }
                 strncpy(coma, ARREGLO[i].Informacion + indice, 1);
                 if (coma[0] == 44){
                         indice += 1;
@@ -216,34 +221,35 @@ int main (){
                                 indice += 1;
                                 printf("\nSe registro calificacion 7 de alumno %d: %s", i + 1, ARREGLO[i].parcial7);
                         }
-                }arregloDEmemoria[i].cal_enCache[6] = atoi(ARREGLO[i].parcial7);
-                ++i;
+                }
+                i++;
         } while (i < num_renglones);
-        printf ("\nDatos obtenidos del archivo\n");
+        printf ("Datos obtenidos del archivo\n");
         for (i = 0; i < num_renglones; i ++){
                 printf ("Informacion: %s \n", ARREGLO[i].Informacion);
         }
         for (i = 0; i < num_renglones; i ++){
-                printf ("Promedio por alumno  No.%d: %.2f\n", i + 1, f_promedio(arregloDEmemoria, &i));
-                promedioDelgrupo += f_promedio(arregloDEmemoria, &i);
+                printf ("\nPromedio %d: %.2f", i + 1, f_promedio(ARREGLO, &i));
         }
-        promedioDelgrupo = promedioDelgrupo / num_renglones;
+
         for (i = 1; i < 8; i ++){
                 prom_parc = i;
-                arre_prom[i] = f_prom_x_parcial(arregloDEmemoria, &prom_parc, &num_renglones);
-                printf("Promedio por parcial No.%d: %.2f\n", i, arre_prom[i]);
+                arre_prom[i] = f_prom_x_parcial(ARREGLO, &prom_parc, &num_renglones);
+                promedioDelgrupo += arre_prom[i];
+
         }
+        promedioDelgrupo = promedioDelgrupo / 7;
         fclose(punteroDEarchivo);
 
         punteroPIA = fopen("C://Users//USER//Desktop//archivos//PIA_solicitado.csv", "w+");
         fprintf(punteroPIA, "MATRICULA, PARCIAL 1, PARCIAL 2, PARCIAL 3, PARCIAL 4, PARCIAL 5, PARCIAL 6, PARCIAL 7, PROMEDIO X ALUMNO, NO APROBADOS\n");
         for (i = 0; i < num_renglones; i ++){
-                /*fprintf(punteroPIA, "%s, ")*/ fflush(stdin);
-                fprintf(punteroPIA, "%s, %d, %d, %d, %d, %d, %d, %d, %.0f, %d\n", arregloDEmemoria[i].mat_enCache, arregloDEmemoria[i].cal_enCache[0], arregloDEmemoria[i].cal_enCache[1], arregloDEmemoria[i].cal_enCache[2], arregloDEmemoria[i].cal_enCache[3], arregloDEmemoria[i].cal_enCache[4], arregloDEmemoria[i].cal_enCache[5], arregloDEmemoria[i].cal_enCache[6], f_promedio(arregloDEmemoria, &i), f_reprobados_x_alumno(arregloDEmemoria, &i));
+            fflush(stdin);
+                fprintf(punteroPIA, "%s, %d, %d, %d, %d, %d, %d, %d, %.0f, %d\n",ARREGLO[i].Matricula, atoi(ARREGLO[i].parcial1), atoi(ARREGLO[i].parcial2), atoi(ARREGLO[i].parcial3), atoi(ARREGLO[i].parcial4), atoi(ARREGLO[i].parcial5), atoi(ARREGLO[i].parcial6), atoi(ARREGLO[i].parcial7), f_promedio(ARREGLO, &i), f_reprobados_x_alumno(ARREGLO, &i));
         }
         fprintf(punteroPIA, "PROMEDIO X PARCIAL, %.0f, %.0f, %.0f, %.0f, %.0f, %.0f, %.0f, PROMEDIO DEL GRUPO, %.0f\n", arre_prom[1], arre_prom[2], arre_prom[3], arre_prom[4], arre_prom[5], arre_prom[6], arre_prom[7], promedioDelgrupo);
-        total_no_arobadas = f_reprobados_x_parcial(arregloDEmemoria, 1, &num_renglones) + f_reprobados_x_parcial(arregloDEmemoria, 2, &num_renglones) + f_reprobados_x_parcial(arregloDEmemoria, 3, &num_renglones)+ f_reprobados_x_parcial(arregloDEmemoria, 4, &num_renglones)+ f_reprobados_x_parcial(arregloDEmemoria, 5, &num_renglones)+ f_reprobados_x_parcial(arregloDEmemoria, 6, &num_renglones)+ f_reprobados_x_parcial(arregloDEmemoria, 7, &num_renglones);
-        fprintf(punteroPIA, "NO APROBADOS, %d, %d, %d, %d, %d, %d, %d, CANTIDAD DE NO APROBADOS, %d\n", f_reprobados_x_parcial(arregloDEmemoria, 1, &num_renglones), f_reprobados_x_parcial(arregloDEmemoria, 2, &num_renglones), f_reprobados_x_parcial(arregloDEmemoria, 3, &num_renglones), f_reprobados_x_parcial(arregloDEmemoria, 4, &num_renglones), f_reprobados_x_parcial(arregloDEmemoria, 5, &num_renglones), f_reprobados_x_parcial(arregloDEmemoria, 6, &num_renglones), f_reprobados_x_parcial(arregloDEmemoria, 7, &num_renglones), total_no_arobadas);
+        total_no_arobadas = f_reprobados_x_parcial(ARREGLO, 1, &num_renglones) + f_reprobados_x_parcial(ARREGLO, 2, &num_renglones) + f_reprobados_x_parcial(ARREGLO, 3, &num_renglones)+ f_reprobados_x_parcial(ARREGLO, 4, &num_renglones)+ f_reprobados_x_parcial(ARREGLO, 5, &num_renglones)+ f_reprobados_x_parcial(ARREGLO, 6, &num_renglones)+ f_reprobados_x_parcial(ARREGLO, 7, &num_renglones);
+        fprintf(punteroPIA, "NO APROBADOS, %d, %d, %d, %d, %d, %d, %d, CANTIDAD DE NO APROBADOS, %d\n", f_reprobados_x_parcial(ARREGLO, 1, &num_renglones), f_reprobados_x_parcial(ARREGLO, 2, &num_renglones), f_reprobados_x_parcial(ARREGLO, 3, &num_renglones), f_reprobados_x_parcial(ARREGLO, 4, &num_renglones), f_reprobados_x_parcial(ARREGLO, 5, &num_renglones), f_reprobados_x_parcial(ARREGLO, 6, &num_renglones), f_reprobados_x_parcial(ARREGLO, 7, &num_renglones), total_no_arobadas);
 
         fclose(punteroPIA);
 
